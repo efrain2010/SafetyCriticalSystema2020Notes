@@ -1,2 +1,1 @@
-# SafetyCriticalSystema2020Notes
-# SafetyCriticalSystema2020Notes
+# Safety Critical Systema 2020 Notes
