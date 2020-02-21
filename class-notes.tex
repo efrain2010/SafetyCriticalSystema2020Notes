@@ -8,6 +8,7 @@
 % the overall format (e.g. don't change the margins or the reference style).
 %
 \usepackage{pdfpages} % if you want to include a PDF for an ethics checklist, for example
+\usepackage{soul}
 %
 %
 
@@ -17,7 +18,7 @@
 %% METADATA
 \title{Notes} % change this to your title
 \author{Efraín Manuel Villanueva Castilla}
-\date{Febreuary 18, 2020}
+\date{February 18, 2020}
 
 \maketitle
 
@@ -56,24 +57,110 @@
 % the structure suggested here.
 %
 %==================================================================================================================================
-\chapter{Introduction}
+\pagebreak
 
 % reset page numbering. Don't remove this!
 \pagenumbering{arabic} 
 
-This is my first attempt to make clean notes about what happened in class. In this document you will find notes about Safety Critical System Class 2020
+
+% ============================
+% === Start of Chapter One ===
+% ============================
+
+\chapter{Objectives of the class}
+\begin{enumerate}
+    \item Understand the professional and social issues involved in the design and testing of fafety-critical systems.
+    \item Recognise the importance of standards and show a clear understanding of recent initiatives in this area.
+    \item Be able to apply a number of \textbf{risk analysis techniques} such as \textbf{Failure Modes, Effects and Criticality Analysis and Fault Tree Analysis}
+    \item Be able to apply a unmber of safety critical design techniques such as literate specification
+    \item Be able to apply a number of safety critical evaluation techniques such as Black Box testing and the observational evaluation of operator performance.
+    \item Be able to identify the main characteristics of an appropriate \textbf{safety culture} within large organisations
+\end{enumerate}
+
+% ==========================
+% === End of Chapter One ===
+% ==========================
+
+%===================================
+
+% ============================
+% === Start of Chapter Two ===
+% ============================
 
 \chapter{Class Introduction}
 
-Safety Governance, Market Focused
+\vspace{1\baselineskip}
+
 \begin{itemize}
-    \item People buy things even if the probabilitties of death are high.
+    \item What is a \underline{none-functional} requirement?
+    \begin{itemize}
+        \item Requirements that can't be tested in certain way
+    \end{itemize}
+    \item What is ALARP and what is the relation with Safety Critical Systems?
+    \item As Low As Reasonable Practicable (ALARP) vs As Low As Reasonable Achievable (ALARA)
+    \item Testing can prove the presence of errors, but not their absence
+    \item Is Safety "relative" or "absolute"?
+    \begin{itemize}
+        \item Relative.You can only improve safety, not make it perfect
+    \end{itemize}
+\end{itemize}
+
+\vspace{2\baselineskip}
+
+% === Start of Section ===
+
+\section{The Bathtub Curve}
+The bathtub curve is widely used in reliability engineering. It describes a particular form of the hazard function which comprises three parts:
+\begin{enumerate}
+    \item The first part is a decreasing failure rate, known as early failures.
+    \item The second part is a constant failure rate, known as random failures.
+    \item The third part is an increasing failure rate, known as wear-out failures.
+\end{enumerate}
+
+This is very used in hardware testing, because as the time pass the hardware ages and is has the following behaviour:
+\begin{enumerate}
+    \item In the first part, the probability of failure is high because the hardware is new
+    \item In the second part, the probability of failure is low (constant), since known failures have been fixed
+    \item In the third part, the hardware is old and does not have more support or improvement, so the probability of failure goes up again
+\end{enumerate}
+
+\begin{figure}[h]
+    \includegraphics[width=350px]{./images/bathtub_curve.png}
+    \centering
+    \caption{Bathtub Model representation}
+\end{figure}
+
+\vspace{1\baselineskip}
+
+% === Start of Section ===
+
+\section{Safety Governance}
+\textbf{Safety Governance.} Provides the structure through which the vision and commitment to safety is set, the means of attaining safety objectives are agreed, the framework for monitoring performance is established and compliance with the legislation is ensured.
+
+\vspace{1\baselineskip}
+
+Three flawed forms of safety governance:
+\begin{enumerate}
+    \item Market forces: 3rd party effects;
+    \item Tort and insurance: inefficent and retrospective;
+    \item State regulation: risk based, can be bureaucratic;
+\end{enumerate}
+
+\vspace{1\baselineskip}
+
+% === Start of Sub Section ===
+
+\subsection{Market Focus}
+\begin{itemize}
+    \item People buy things even if the probabilities of death are high.
     \item Imperfect information. Companies not telling the truth about safety of their products
     \item $\theta$ Third party effect. Does apply for market forces, because it does not affect the buyer
     \item Some of the companies who causes detah to third parties, sometimes needs to pay for what their product caused
 \end{itemize}
 
-Tort and Insurance
+% === Start of Sub Section ===
+
+\subsection{Tort and Insurance: inefficient and retrospective}
 \begin{itemize}
     \item Legal fees do not improve safety
     \item Some companies are just fine for what their product did, but that does not improve safety
@@ -81,6 +168,15 @@ Tort and Insurance
     \item \underline{Moral hazard.} When companies feels very protected when they are sorrounded
     \item Government put limits (tops) to fines
 \end{itemize}
+
+% === Start of Sub Section ===
+
+\subsection{State Regulation: risk based, can be bureaucratic}
+
+
+
+
+% === Start of Section ===
 
 Different Format Regulation
 \begin{itemize}
@@ -91,7 +187,7 @@ Different Format Regulation
 \end{itemize}
 
 \vspace{1\baselineskip}
-\textbf{Mend Rea} $\rightarrow$ Guilty Mind
+\textbf{Mens Rea} $\rightarrow$ Guilty Mind
 \vspace{1\baselineskip}
 
 \textbf{2 types of processes}
@@ -100,21 +196,23 @@ Different Format Regulation
     \item Process base Standar
 \end{enumerate}
 
-Process Base Standard
+% === Start of Section ===
+
+\section{Process Base Standard}
 \begin{itemize}
     \item Standards
     \item Steps
     \item Specifications
 \end{itemize}
 
-Standard IEC 61508 $\leftarrow$ $\theta$ and (26262) 
+\section{Standard IEC 61508 and (26262)}
+\textbf{International standard} published by the International Electrotechnical Commission consisting of methods on \hl{how to apply, design, deploy and maintain automatic protection systems called safety-related systems}. It is titled Functional Safety of Electrical/Electronic/Programmable Electronic Safety-related Systems (E/E/PE, or E/E/PES).
+\vspace{1\baselineskip}
 \begin{itemize}
-    \item Functional Systems Standard
+    \item This is a Functional Systems Standard
     \item $\neq$ Publishing Audible
-    \item Electronic
-    \item Electrical Electronic Programmable Systems
-    \item Market forces are not enough $\rightarrow$ Standard
-    \item Standards. Set of rules of conduct
+    \item The market forces are not enough so an Standard was build to ensure that companies follow the appropriate steps to have safety in their products
+    \item A standards is a set of rules of conduct
     \item \textbf{*} Minor Changes. How much I have to change for the system is safe
 \end{itemize}
 

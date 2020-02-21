@@ -136,7 +136,7 @@ textfont=it,tableposition=above]{caption}
 
 
 % fix the margins and linespacing
-\usepackage[top=3.5cm,bottom=4.0cm,left=3.5cm,right=3.5cm]{geometry}
+\usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 \setlength{\parskip}{5pt plus 2pt}
 
 % define the title page
@@ -218,8 +218,8 @@ textfont=it,tableposition=above]{caption}
   % only show numbers if they aren't Chapter 0 (i.e. front matter)
   {\normalfont}{}{0pt}{
     \huge\bfseries\secfont
-    \IfInteger{\thechapter}{\ifnum0=0\thechapter\relax\else\relax {\Huge \thechapter}\ \rule[-0.25em]{0.5pt}{1.5em}\ \fi}
-    {\thechapter \ \rule[-0.25em]{0.5pt}{1.5em}\ }}
+    \IfInteger{\thechapter}{\ifnum0=0\thechapter\relax\else\relax {\Huge \thechapter}\ \rule[-0.25em]{0.5pt}{1em}\ \fi}
+    {\thechapter \ \rule[-0.25em]{0.5pt}{1em}\ }}
   %[\titlerule]
   \titlespacing*{\chapter}      
   {0pt}{0pt}{15pt}  
@@ -288,7 +288,7 @@ textfont=it,tableposition=above]{caption}
 \titlespacing{\section}{10pt}{1.5\baselineskip}{8pt plus 3pt minus 3pt}
 \titlespacing{\subsection}{10pt}{\baselineskip}{8pt plus 4pt minus 1pt}
 \titleformat{\subsubsection}[runin]{\bfseries }{}{}{}[]
-\titlespacing{\chapter}{0pt}{0pt}{40pt plus 10pt minus 5pt} 
+\titlespacing{\chapter}{0pt}{0pt}{15pt plus 10pt minus 5pt} 
 
 % switch to roman numeral for frontmatter
 \pagenumbering{roman}
