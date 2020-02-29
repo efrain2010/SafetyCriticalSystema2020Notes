@@ -97,12 +97,19 @@
         \item Requirements that can't be tested in certain way
     \end{itemize}
     \item What is ALARP and what is the relation with Safety Critical Systems?
-    \item As Low As Reasonable Practicable (ALARP) vs As Low As Reasonable Achievable (ALARA)
+    \begin{itemize}
+        \item As Low As Reasonable Practicable (ALARP) vs As Low As Reasonable Achievable (ALARA)
+    \end{itemize}
     \item Testing can prove the presence of errors, but not their absence
     \item Is Safety "relative" or "absolute"?
     \begin{itemize}
         \item Relative.You can only improve safety, not make it perfect
     \end{itemize}
+    \item What is safety?
+    \begin{itemize}
+        \item Freedom from accidents/losses
+    \end{itemize}
+    \item Accidents are complex multi-causal events, almost impossible to predict
 \end{itemize}
 
 \vspace{2\baselineskip}
@@ -158,6 +165,8 @@ Three flawed forms of safety governance:
     \item Some of the companies who causes detah to third parties, sometimes needs to pay for what their product caused
 \end{itemize}
 
+test
+
 % === Start of Sub Section ===
 
 \subsection{Tort and Insurance: inefficient and retrospective}
@@ -205,7 +214,7 @@ Different Format Regulation
     \item Specifications
 \end{itemize}
 
-\section{Standard IEC 61508 and (26262)}
+\section{Standard IEC 61508}
 \textbf{International standard} published by the International Electrotechnical Commission consisting of methods on \hl{how to apply, design, deploy and maintain automatic protection systems called safety-related systems}. It is titled Functional Safety of Electrical/Electronic/Programmable Electronic Safety-related Systems (E/E/PE, or E/E/PES).
 \vspace{1\baselineskip}
 \begin{itemize}
@@ -214,10 +223,6 @@ Different Format Regulation
     \item The market forces are not enough so an Standard was build to ensure that companies follow the appropriate steps to have safety in their products
     \item A standards is a set of rules of conduct
     \item \textbf{*} Minor Changes. How much I have to change for the system is safe
-\end{itemize}
-
-\textbf{IEC 61508} 
-\begin{itemize}
     \item Programmable Systems
     \item Across the process industries
     \item Zero risk is impossible
@@ -230,5 +235,84 @@ Different Format Regulation
         \item Software is not hazard but hardware is
     \end{itemize}
 \end{itemize}
+
+
+{\textbf Standard 26262}\\
+The standard ISO 26262 is an adaptation of the Functional Safety standard IEC 61508 for Automotive Electric/Electronic Systems. ISO 26262 defines functional safety for automotive equipment applicable throughout the lifecycle of all automotive electronic and electrical safety-related systems.\\
+
+ISO 26262 defines a {\textbf hazard as} "a potential source of harm caused by malfunctioning behaviour of the item where harm is physical injury or damage to the health of persons"\\
+This standard make use of analyses such as {\textbf Fault Mode Effect Analysis (FMEA)} to identify how faults lead to failures that may cause harm.\\
+In an article titled "An Analysis of ISO 26262: Using Machine Learning Safely in Automotive Software" mention two tools of fault detection and techniques for Machine Learning. Chakarov et al and Nushi et al
+
+EUC - Equipment Under Control
+
+{\Large SIL - Software Integrity Level}
+
+\vspace{1\baselineskip}
+
+There are four different levels of SIL being SIL level 4 the most dangerous and level 1 the less.
+
+\subsection{Fault Trees Analysis (FTA)}
+
+It is a {\textbf top-down}, deductive failure analysis in which an undesired state of a system is analyzed using Boolean logic to combine a series of lower-level events. This analysis method is mainly used in safety engineering and reliability engineering to understand how systems can fail, to identify the best ways to reduce risk and to determine failure. FTA is used in the aerospace, nuclear power, chemical and process, pharmaceutical, petrochemical, and other high-hazard industries; but is also used in fields as diverse as risk factor identification relating to social service system failure. FTA is also used in software engineering for debugging purposes and is closely related to the cause-elimination technique used to detect bugs.\\
+
+{\textbf Fault tree analysis can be used to:}
+\begin{itemize}
+    \item Understand the logic leading to the top event / undesired state.
+    \item Show compliance with the (input) system safety / reliability requirements.
+    \item Prioritize the contributors leading to the top event- creating the critical equipment/parts/events lists for different importance measures
+    \item Monitor and control the safety performance of the complex system (e.g., is a particular aircraft safe to fly when fuel valve x malfunctions? For how long is it allowed to fly with the valve malfunction?).
+    \item Minimize and optimize resources.
+    \item Assist in designing a system. {\textbf The FTA can be used as a design tool that helps to create (output / lower level) requirements}.
+    \item Function as a diagnostic tool to identify and correct causes of the top event. It can help with the creation of diagnostic manuals / processes.
+\end{itemize}
+
+\begin{figure}[h]
+    \includegraphics[width=180px]{./images/Fault_tree.png}
+    \centering
+    \caption{Fault Tree Diagram}
+\end{figure}
+
+\vspace{1\baselineskip}
+
+\subsection{Faulire Modes and Effects Analysis (FMEA/FMECA)}
+
+Is the process of reviewwing as many componentes, assemblies, and subsystems as possible to identify potential failure modes in a system and their causes and effect. For each component, the failure modes an their resulting effects on the rest of the system are recorded in a specific FMEA worksheet. There are numerous variations of such worksheets. An FMEA can be a qualitative analysis, but may be put on a quantitative bases when mathematical failure rate models are combined with a statistical failure mode ratio database. An FMEA is often the first step of a system reliability study.
+
+\vspace{1\baselineskip}
+
+A few different types of FMEA analyses exist, such as: {\underline Funcitonal, Design and Process}
+
+\vspace{1\baselineskip}
+
+How to apply the Failure Modes Effect Analysis:
+\begin{enumerate}
+    \item Construct functional block diagram.
+    \begin{itemize}
+        \item Establish scope of the analysis
+        \item Break system into subcomponents
+        \item Different levels of detail?
+        \item Some unkowns early in design?
+    \end{itemize}
+    \item Use diagram to identify any associated failure modes.
+    \begin{itemize}
+        \item many different failure modes: complete failure, partial failure, intermittant failure, gradual failure, etc.
+        \item Not all wil apply?
+        \item compare with HAZOPS guidewords
+    \end{itemize}
+    \item Identify effects of failure and assess criticality.
+    \item Repeat 2 and 3 for ptential consequences.
+    \item Identify causes and ocurrence rates.
+    \item Determine detection factors.
+    \item Calculate Risk Priority Numbers.
+    \item Finalise hazard assessment.
+\end{enumerate}
+
+\vspace{1\baselineskip}
+
+\subsection{Hazard and operability study (HAZOPS)}
+
+Structured and systematic examination of a complex planned or existing process or operation to identify and evaluate problems that may represent risks to personnel or equipment. Often used as a technique for identifying potential hazards in a system and identifying operability problems likely to lead to nonconforming products.
+
 
 \end{document}
