@@ -283,22 +283,43 @@ Weaknesses:
 
 \begin{center}
     \large{\textbf{Risk = frequency $\times$ cost}}
+    How to calculate risk
 \end{center}
 
-\section{Hazard Identification}
+\section{Main components of Risk Analysis}
+
+\begin{itemize}
+    \item Hazard Identification
+    \item Probability and Consequence Assessment
+    \item Acceptability Assessment
+    \item Mitigation
+\end{itemize}
+
+\subsection{Hazard Identification}
+
+\textbf{Event Frecuency.} There are several categories in the frecuency: Frequent, probable, occasional, remote, improbable, incredible.
+
+\textbf{Hazard Consequence.} Different categories: catstrophic, critical, marginal, negligible.
+
+\begin{itemize}
+    \item Estimate EUC risk of all hazards
+    \item Quantitative or qualitative techniques
+    \item Must be documented and maintained
+    \item User must choose the method
+\end{itemize}
+
 
 \chapter{Standard 26262}
-The standard ISO 26262 is an adaptation of the Functional Safety standard IEC 61508 for Automotive Electric/Electronic Systems. ISO 26262 defines functional safety for automotive equipment applicable throughout the lifecycle of all automotive electronic and electrical safety-related systems.\\
+The standard ISO 26262 is an adaptation of the Functional Safety standard IEC 61508 for Automotive Electric/Electronic Systems. ISO 26262 defines functional safety for automotive equipment applicable throughout the lifecycle of all automotive electronic and electrical safety-related systems.
 
 ISO 26262 defines a {\textbf hazard as} "a potential source of harm caused by malfunctioning behaviour of the item where harm is physical injury or damage to the health of persons"\\
 This standard make use of analyses such as {\textbf Fault Mode Effect Analysis (FMEA)} to identify how faults lead to failures that may cause harm.\\
 In an article titled "An Analysis of ISO 26262: Using Machine Learning Safely in Automotive Software" mention two tools of fault detection and techniques for Machine Learning. Chakarov et al and Nushi et al
 
 \chapter{Fault Trees Analysis (FTA)}
+It is a \textbf{top-down}, deductive failure analysis in which an undesired state of a system is analyzed using Boolean logic to combine a series of lower-level events. This analysis method is mainly used in safety engineering and reliability engineering to understand how systems can fail, to identify the best ways to reduce risk and to determine failure. FTA is used in the aerospace, nuclear power, chemical and process, pharmaceutical, petrochemical, and other high-hazard industries; but is also used in fields as diverse as risk factor identification relating to social service system failure. FTA is also used in software engineering for debugging purposes and is closely related to the cause-elimination technique used to detect bugs.
 
-It is a {\textbf top-down}, deductive failure analysis in which an undesired state of a system is analyzed using Boolean logic to combine a series of lower-level events. This analysis method is mainly used in safety engineering and reliability engineering to understand how systems can fail, to identify the best ways to reduce risk and to determine failure. FTA is used in the aerospace, nuclear power, chemical and process, pharmaceutical, petrochemical, and other high-hazard industries; but is also used in fields as diverse as risk factor identification relating to social service system failure. FTA is also used in software engineering for debugging purposes and is closely related to the cause-elimination technique used to detect bugs.\\
-
-{\textbf Fault tree analysis can be used to:}
+\textbf{Fault tree analysis can be used to:}
 \begin{itemize}
     \item Understand the logic leading to the top event / undesired state.
     \item Show compliance with the (input) system safety / reliability requirements.
